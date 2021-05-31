@@ -1,11 +1,8 @@
 package com.pastebinapi;
 
-import com.pastebinapi.paste.ExpireDate;
-import com.pastebinapi.paste.PasteFormat;
-
 public class Main {
     public static void main(String args[]) {
-        System.out.println(CommandList.post("v2gvvuSlNTV5ewPUwMICqT27VcN5JFgp",
+        System.out.println(CommandList.simplePost("v2gvvuSlNTV5ewPUwMICqT27VcN5JFgp",
                 "package com.pastebinapi.paste;\n" +
                         "\n" +
                         "public enum PasteFormat {\n" +
@@ -40,9 +37,8 @@ public class Main {
                         "        }\n" +
                         "        throw new UnsupportedOperationException(String.format(\"Unsupported paste format %s\", value));\n" +
                         "    }\n" +
-                        "}\n",
-                "Paste format",
-                ExpireDate.OneHour,
-                PasteFormat.Java));
+                        "}\n"
+        ));
+
     }
 }

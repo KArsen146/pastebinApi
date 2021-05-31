@@ -37,4 +37,13 @@ public class CommandList {
         }
         return result.get();
     }
+    
+    public static String simplePost(@NotNull String devKey, @NotNull String pasteCode) {
+        Pastebin pastebin = new PastebinImpl(devKey);
+        Response result = pastebin.post(PasteImpl.createSimplePaste(pasteCode));
+        if (result.isError()) {
+            return String.format("Something gone wrong: %s", result.get());
+        }
+        return result.get();
+    }
 }
